@@ -1,1 +1,1 @@
-# Naruto-Sasuke-Mode
+Naruto-Sasuke-Mode
