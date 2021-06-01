@@ -9,6 +9,7 @@ const uiElementsObj = {
     hamburgerMenu: document.getElementById('hamburger')
 }
 
+
 /** 
  * Toggle the illustration images b/w dark and light mode
  * {Param}: string (dark, light)
