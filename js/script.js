@@ -13,10 +13,11 @@ const uiElementsObj = {
  * Toggle the illustration images b/w dark and light mode
  * {Param}: string (dark, light)
  */
-const setImageBg = () => {
-    uiElementsObj.images.image1.src = `assets/sasukestory.png`;
-    uiElementsObj.images.image2.src = `assets/sasukejutsu.jpeg`;
-    uiElementsObj.images.image3.src = `assets/sasukeper.png`;
+const setImageColor = (color) => {
+    uiElementsObj.images.image1.src = `assets/story_${color}.png`;
+    uiElementsObj.images.image2.src = `assets/jutsu_${color}.jpeg`;
+    uiElementsObj.images.image3.src = `assets/personality_${color}.png`;
+    uiElementsObj.images.rasen.src = `assets/rasen_${color}.jpg`;
 }
 
 /** 
@@ -29,7 +30,7 @@ const toggleDarkLightMode = (isDark) => {
     uiElementsObj.textBox.style.backgroundColor = isDark ? 'rgb(255 255 255 / 50%)' : 'rgb(0 0 0 / 50%)';
     uiElementsObj.toggleIcon.children[0].textContent = isDark ? 'Sasuke Mode' : 'Naruto Mode';
     isDark ? uiElementsObj.toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon') : uiElementsObj.toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
-    isDark ? setImageBg('dark') : setImageBg('light');
+    isDark ? setImageColor('dark') : setImageColor('light');
     isDark ? window.localStorage.setItem('mode', 'dark') : window.localStorage.setItem('mode', 'light');
 }
 
