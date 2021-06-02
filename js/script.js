@@ -6,7 +6,8 @@ const uiElementsObj = {
     textBox: document.getElementById('text-box'),
     images: document.getElementsByTagName('img'),
     sections: document.getElementsByTagName('section'),
-    hamburgerMenu: document.getElementById('hamburger')
+    hamburgerMenu: document.getElementById('hamburger'),
+    headers: document.getElementsByClassName('title-group')
 }
 
 
@@ -30,6 +31,8 @@ const toggleDarkLightMode = (isDark) => {
     uiElementsObj.navbar.style.backgroundColor = isDark ? 'rgb(0 0 0 / 50%)' : 'rgb(255 255 255 / 50%)';
     uiElementsObj.textBox.style.backgroundColor = isDark ? 'rgb(255 255 255 / 50%)' : 'rgb(0 0 0 / 50%)';
     uiElementsObj.toggleIcon.children[0].textContent = isDark ? 'Sasuke Mode' : 'Naruto Mode';
+    uiElementsObj.headers[0].children[0].textContent = isDark ? 'Sasuke Uchiha' : 'Naruto Uzumaki';
+    uiElementsObj.headers[0].children[1].textContent = isDark ? 'The Tale of an Avenger' : 'The Tale of Naruto Uzumaki';
     isDark ? uiElementsObj.toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon') : uiElementsObj.toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
     isDark ? setImageColor('dark') : setImageColor('light');
     isDark ? window.localStorage.setItem('mode', 'dark') : window.localStorage.setItem('mode', 'light');
